@@ -3,3 +3,34 @@
 *@
 @{
 }
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h1>List of JobRoles</h1>
+    <h1>@ViewBag.info</h1>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Role</th>
+                    <th>Salary</th>
+                    <th>CompanyId</th>
+                    @*<th>Department</th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in (List<AdminModel>)ViewData["list_of_roles"]) // Casting to List<Item> to access the list
+                {
+                    <tr>
+                        <td>@item.JOBID</td>
+                        <td>@item.ROLE</td>
+                        <td>@item.SALARY</td>
+                        <td>@item.COMPANYID</td>
+                        @*<td>@item.COMPANY</td>*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
